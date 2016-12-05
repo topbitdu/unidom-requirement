@@ -36,5 +36,5 @@ The migration versions start with 200211.
 ## Call the Model
 
 ```ruby
-requirement = Unidom::Requirement::Requirement.valid_at.alive.first
+requirement = Unidom::Requirement::Requirement.create! superior_requirement: nil, requirer: person, facility: room, reason: reason, estimated_budget: 100, quantity: 10, required_on: Date.current
 ```
