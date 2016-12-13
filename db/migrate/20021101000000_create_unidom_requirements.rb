@@ -10,8 +10,8 @@ class CreateUnidomRequirements < ActiveRecord::Migration
         polymorphic: { null: false, default: '',  limit: 200 }
       t.references :required,             type: :uuid, null: true,
         polymorphic: { null: true,  default: nil, limit: 200 }
-      t.references :facility,             type: :uuid, null: false,
-        polymorphic: { null: false, default: '',  limit: 200 }
+      t.references :facility,             type: :uuid, null: true,
+        polymorphic: { null: true,  default: '',  limit: 200 }
       t.references :reason,               type: :uuid, null: true,
         polymorphic: { null: true,  default: nil, limit: 200 }
 
