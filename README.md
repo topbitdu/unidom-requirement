@@ -37,4 +37,5 @@ The migration versions start with 200211.
 
 ```ruby
 requirement = Unidom::Requirement::Requirement.create! superior_requirement: nil, requirer: person, facility: room, reason: reason, estimated_budget: 100, quantity: 10, required_on: Date.current
+# The #facility attribute could be nil.
 ```
