@@ -1,3 +1,4 @@
+##
 # Requirement 是需求，表示参与者的某种需要，并作用于某个设施。
 
 class Unidom::Requirement::Requirement < Unidom::Requirement::ApplicationRecord
