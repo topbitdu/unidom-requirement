@@ -23,4 +23,4 @@ class Unidom::Requirement::Requirement < Unidom::Requirement::ApplicationRecord
   scope :facility_is,             ->(facility)             { where facility:                facility                    }
   scope :caused_by,               ->(reason)               { where reason:                  reason                      }
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Requirement::Requirement'
