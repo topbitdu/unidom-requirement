@@ -41,3 +41,19 @@ The migration versions start with 200211.
 requirement = Unidom::Requirement::Requirement.create! superior_requirement: nil, requirer: person, facility: room, reason: reason, estimated_budget: 100, quantity: 10, required_on: Date.current
 # The #facility attribute could be nil.
 ```
+
+
+
+## Disable the Model & Migration
+
+If you only need the app components other than models, the migrations should be neglected, and the models should not be loaded.
+```ruby
+# config/initializers/unidom.rb
+Unidom::Common.configure do |options|
+
+  options[:neglected_namespaces] = %w{
+    Unidom::Requirement
+  }
+
+end
+```
