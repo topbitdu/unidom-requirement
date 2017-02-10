@@ -18,3 +18,6 @@
 1. Models RSpec examples manifest
 2. Types RSpec examples manifest
 3. Validators RSpec examples manifest
+
+## v0.3.1
+1. Improve the Requirement spec for the validations on the #estimated_budget attribute, & the #quantity attribute
