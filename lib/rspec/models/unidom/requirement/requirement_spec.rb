@@ -26,6 +26,42 @@ describe Unidom::Requirement::Requirement, type: :model do
 
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
 
+    it_behaves_like 'validates', model_attributes, :estimated_budget,
+      {                                      } => 0,
+      { estimated_budget: nil                } => 2,
+      { estimated_budget: ''                 } => 2,
+      { estimated_budget: 'A'                } => 1,
+      { estimated_budget: '-0.01'            } => 1,
+      { estimated_budget: -0.01              } => 1,
+      { estimated_budget: 0                  } => 1,
+      { estimated_budget: '0'                } => 1,
+      { estimated_budget: 0.01               } => 0,
+      { estimated_budget: '0.01'             } => 0,
+      { estimated_budget: '999_999_999.99'   } => 0,
+      { estimated_budget: 999_999_999.99     } => 0,
+      { estimated_budget: 1_000_000_000      } => 1,
+      { estimated_budget: '1_000_000_000'    } => 1,
+      { estimated_budget: 1_000_000_000.01   } => 1,
+      { estimated_budget: '1_000_000_000.01' } => 1
+
+    it_behaves_like 'validates', model_attributes, :quantity,
+      {                              } => 0,
+      { quantity: nil                } => 2,
+      { quantity: ''                 } => 2,
+      { quantity: 'A'                } => 1,
+      { quantity: '-0.01'            } => 1,
+      { quantity: -0.01              } => 1,
+      { quantity: 0                  } => 1,
+      { quantity: '0'                } => 1,
+      { quantity: 0.01               } => 0,
+      { quantity: '0.01'             } => 0,
+      { quantity: '999_999_999.99'   } => 0,
+      { quantity: 999_999_999.99     } => 0,
+      { quantity: 1_000_000_000      } => 1,
+      { quantity: '1_000_000_000'    } => 1,
+      { quantity: 1_000_000_000.01   } => 1,
+      { quantity: '1_000_000_000.01' } => 1
+
   end
 
 end
