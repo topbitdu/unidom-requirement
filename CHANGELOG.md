@@ -20,4 +20,4 @@
 3. Validators RSpec examples manifest
 
 ## v0.3.1
-1. Improved the Requirement spec for the validations on the #``estimated_budget`` attribute, & the #quantity attribute
+1. Improved the Requirement spec for the validations on the #``estimated_budget`` attribute, & the #``quantity`` attribute
