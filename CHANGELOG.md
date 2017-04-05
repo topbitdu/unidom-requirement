@@ -4,7 +4,7 @@
 1. Requirement model & migration (20021101000000)
 
 ## v0.2
-1. Improved the Requirement model to make the ``belongs_to :facility`` macro optional
+1. Improved the Requirement model to make the ``belongs_to :facility, polymorphic: true`` macro optional
 
 ## v0.2.1
 1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.8
