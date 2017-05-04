@@ -7,8 +7,11 @@ class Unidom::Requirement::Requirement < Unidom::Requirement::ApplicationRecord
 
   include Unidom::Common::Concerns::ModelExtension
 
-  validates :estimated_budget, presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
-  validates :quantity,         presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
+  #validates :estimated_budget, presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
+  #validates :quantity,         presence: true, numericality: { less_than: 1_000_000_000, greater_than: 0 }
+
+  validates :estimated_budget, presence: true, numericality: { less_than: Unidom::Common::MAXIMUM_AMOUNT, greater_than: 0 }
+  validates :quantity,         presence: true, numericality: { less_than: Unidom::Common::MAXIMUM_AMOUNT, greater_than: 0 }
 
   belongs_to :superior_requirement, class_name:  'Unidom::Requirement::Requirement'
   belongs_to :requirer,             polymorphic: true
